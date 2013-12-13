@@ -1,4 +1,4 @@
-var cells;
+var cells = null;
 var situacao = 'vazio';
 var old_n_linhas = 0;
 var old_n_colunas = 0;
@@ -22,8 +22,6 @@ function new_tabuleiro() {
 			cells[i][j].setAttribute("onClick", "clicou(this);");
 		}
 	}
-
-	seta_tabuleiro();
 }
 
 function vanilla_tabuleiro() {
@@ -80,6 +78,10 @@ function decodifica_tabuleiro(code) {
 }
 
 function seta_tabuleiro() {
+	if (cells == null) {
+		new_tabuleiro();
+	}
+
 	if ((state == null) || (state == '0') || (state == 'n0') || (state == '')) {
 		vanilla_tabuleiro();
 	} else {
@@ -224,10 +226,6 @@ function clicou(casa) {
 	l = id_partes[1] - 1;
 	c = id_partes[2] - 1;
 
-	console.debug('clicou na casa ' + casa.id);
-	console.debug('situacao ' + situacao);
-	console.debug('l = ' + l + '; c = ' + c);
-
 	switch (situacao) {
 		case 'vazio':
 			switch (casa.className) {
@@ -238,7 +236,6 @@ function clicou(casa) {
 			}
 			break;
 		case 'selecionado':
-			console.debug('hello?');
 			switch (casa.className) {
 				case 'occupied':
 					desseleciona_casa(selec);
