@@ -5,13 +5,15 @@
 		<title>Peg Kitten Solitaire</title>
 		<link rel="stylesheet" type="text/css" href="peg_kitten.css" />
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript" src="peg_basic.js"></script>
 		<script type="text/javascript" src="peg_kitten.js"></script>
 	</head>
-	<body onLoad="seta_tabuleiro()">
-		<div id="div-tabuleiro">
-			<table id="tabuleiro">
+	<body onLoad="set_gameboard()">
+		<div id="div-gameboard">
+			<table id="gameboard">
 			</table>
 		</div>
-		<div class="recompensa"></div>
+		<div class="bounty"></div>
 	</body>
+	<button type=button onClick="window.location='peg_edit.html' + window.location.hash">Edit this map!</button>
 </html>
