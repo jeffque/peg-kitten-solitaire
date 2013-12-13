@@ -1,0 +1,29 @@
+table {
+	/*border-collapse: collapse;*/
+	border: 1px solid black;
+}
+
+table td {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.invalid {
+	background-color : #999999;
+}
+
+.occupied {
+	background-color : #cc3333;
+}
+
+.selected {
+	background-color : #0077cc;
+}
+
+.possible {
+	background-color : #ccffcc;
+}
+
+.empty {
+	background-color : #ffffff;
+}
