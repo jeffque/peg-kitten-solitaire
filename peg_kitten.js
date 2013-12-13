@@ -1,3 +1,4 @@
+var tabuleiro;
 var cells = null;
 var situacao = 'vazio';
 var old_n_linhas = 0;
@@ -9,13 +10,22 @@ var state = window.location.hash;
 
 function new_tabuleiro() {
 	var i, j;
+	var row;
+
+	tabuleiro = document.getElementById("tabuleiro");
 	cells = new Array();
 	for (i = 0; i < n_linhas; i++) {
 		cells[i] = new Array();
+		row = document.createElement("tr");
+		row.id = "row_" + (i + 1);
+		tabuleiro.appendChild(row);
 	}
 	for (i = 0; i < n_linhas; i++) {
+		row = document.getElementById("row_" + (i + 1));
 		for (j = 0; j < n_colunas; j++) {
-			cells[i][j] = document.getElementById("cell_" + (i + 1) + "_" + (j + 1));
+			cells[i][j] = document.createElement("td");
+			cells[i][j].id = "cell_" + (i + 1) + "_" + (j + 1);
+			row.appendChild(cells[i][j]);
 			if (cells[i][j] == null) {
 				continue;
 			}
