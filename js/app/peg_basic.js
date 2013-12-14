@@ -42,15 +42,15 @@ function vanilla_gameboard() {
 		for (j = 0; j < 9; j++) {
 			if ((i < 3) || (i >= 6)) {
 				if ((j < 3) || (j >= 6)) {
-					code += 'I';
+					code += PK.states.INVALID;
 				} else {
-					code += 'O';
+					code += PK.states.OCCUPIED;
 				}
 			} else {
 				if ((i == j) && (j == 4)) {
-					code += 'E';
+					code += PK.states.EMPTY;
 				} else {
-					code += 'O';
+					code += PK.states.OCCUPIED;
 				}
 			}
 		}
@@ -110,13 +110,13 @@ function codify_gameboard() {
 			switch(cells[i][j].className) {
 				case 'empty':
 				case 'possible':
-					code += 'E';
+					code += PK.states.EMPTY;
 					break;
 				case 'invalid':
-					code += 'I';
+					code += PK.states.INVALID;
 					break;
 				default:
-					code += 'O';
+					code += PK.states.OCCUPIED;
 			}
 		}
 	}
