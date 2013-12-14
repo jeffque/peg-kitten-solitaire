@@ -3,16 +3,23 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Peg Kitten Solitaire Editor</title>
-		<link rel="stylesheet" type="text/css" href="peg_kitten.css" />
-		<script type="text/javascript" src="peg_basic.js"></script>
-		<script type="text/javascript" src="peg_edit.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/peg_kitten.css" />
 	</head>
-	<body onLoad="set_gameboard()">
+
+	<body>
 		<div id="div-gameboard">
 			<table id="gameboard">
 			</table>
 		</div>
-		<button type=button onClick="window.location='peg_kitten.html' + window.location.hash">Play this map!</button>
+		<button id="play" type=button>Play this map!</button>
 	</body>
+
+    <script type="text/javascript" src="js/libs/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="js/app/defines.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript" src="js/app/peg_basic.js"></script>
+    <script type="text/javascript" src="js/app/peg_edit.js"></script>
 </html>
 
