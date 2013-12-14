@@ -16,12 +16,16 @@ table td {
 	background-color : #cc3333;
 }
 
+.playable {
+	background-color : #aa3377;
+}
+
 .selected {
 	background-color : #0077cc;
 }
 
 .possible {
-	background-color : #ccffcc;
+	background-color : #32ee32;
 }
 
 .empty {
