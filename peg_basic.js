@@ -82,6 +82,11 @@ function decodify_gameboard(code_brute) {
 	n_rows = code_split[1];
 	n_columns = code_split[2];
 
+	if (cells == null) {
+		new_gameboard();
+	}
+
+
 	for (i = 0; i < n_rows; i++) {
 		for (j = 0; j < n_columns; j++) {
 			switch(code[n]) {
@@ -128,10 +133,6 @@ function codify_gameboard() {
 }
 
 function set_gameboard() {
-	if (cells == null) {
-		new_gameboard();
-	}
-
 	if ((state == null) || (state == '0') || (state == 'n0') || (state == '')) {
 		vanilla_gameboard();
 	} else {
