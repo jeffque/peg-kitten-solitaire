@@ -1,5 +1,5 @@
 /**
- * Peh Kitten application namespace
+ * Peg Kitten application namespace
  * @namespace
  */
 PK = {};
