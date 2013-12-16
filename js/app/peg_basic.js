@@ -34,29 +34,29 @@ function new_gameboard() {
 
 function vanilla_gameboard() {
 	var i, j;
-	var code = '#_' + 9 + '_' + 9 + '_';
+	var code_obj = new PK.peg_code('');
 	
-	n_rows = n_columns = 9;
+	code_obj.rows = code_obj.columns = n_rows = n_columns = 9;
 	
 	for (i = 0; i < 9; i++) {
 		for (j = 0; j < 9; j++) {
 			if ((i < 3) || (i >= 6)) {
 				if ((j < 3) || (j >= 6)) {
-					code += PK.states.INVALID;
+					code_obj.code += PK.states.INVALID;
 				} else {
-					code += PK.states.OCCUPIED;
+					code_obj.code += PK.states.OCCUPIED;
 				}
 			} else {
 				if ((i == j) && (j == 4)) {
-					code += PK.states.EMPTY;
+					code_obj.code += PK.states.EMPTY;
 				} else {
-					code += PK.states.OCCUPIED;
+					code_obj.code += PK.states.OCCUPIED;
 				}
 			}
 		}
 	}
 	
-	decodify_gameboard(code);
+	decodify_gameboard(code_obj.stringfy());
 }
 
 /**
@@ -75,12 +75,13 @@ function vanilla_gameboard() {
  */
 function decodify_gameboard(code_brute) {
 	var i, j, n = 0;
-	var code_split = code_brute.split('_');
-	var code = code_split[3];
 
-	console.debug(code);
-	n_rows = code_split[1];
-	n_columns = code_split[2];
+	var code_obj = new PK.peg_code(code_brute);
+	console.debug("code obj " + code_obj.code + "; rows " + code_obj.rows + "; columns " + code_obj.columns);
+	console.debug("code obj stringfy: " + code_obj.stringfy());
+
+	n_rows = code_obj.rows;
+	n_columns = code_obj.columns;
 
 	if (cells == null) {
 		new_gameboard();
@@ -89,7 +90,7 @@ function decodify_gameboard(code_brute) {
 
 	for (i = 0; i < n_rows; i++) {
 		for (j = 0; j < n_columns; j++) {
-			switch(code[n]) {
+			switch(code_obj.code[n]) {
 				case 'O':
 					cells[i][j].className = 'occupied';
 					break;
@@ -103,11 +104,11 @@ function decodify_gameboard(code_brute) {
 			n++;
 		}
 	}
-	state = window.location.hash = code_brute;
+	state = window.location.hash = code_obj.stringfy();
 }
 
 function codify_gameboard() {
-	var code = '';
+	var code_obj = new PK.peg_code("");
 	var i, j;
 
 	for (i = 0; i < 9; i++) {
@@ -115,21 +116,22 @@ function codify_gameboard() {
 			switch(cells[i][j].className) {
 				case 'empty':
 				case 'possible':
-					code += PK.states.EMPTY;
+					code_obj.code += PK.states.EMPTY;
 					break;
 				case 'invalid':
-					code += PK.states.INVALID;
+					code_obj.code += PK.states.INVALID;
 					break;
 				default:
-					code += PK.states.OCCUPIED;
+					code_obj.code += PK.states.OCCUPIED;
 			}
 		}
 	}
 
-	var code_brute = '#_' + n_rows + '_' + n_columns + '_' + code;
+	code_obj.rows = n_rows;
+	code_obj.columns = n_columns;
 
-	console.debug(code_brute);
-	estado = window.location.hash = code_brute;
+	console.debug(code_obj.stringfy());
+	estado = window.location.hash = code_obj.stringfy();
 }
 
 function set_gameboard() {
