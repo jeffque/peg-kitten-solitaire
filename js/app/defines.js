@@ -16,6 +16,12 @@ PK = {
 		}
 
 		this.stringfy = function() {
+			if (this.rows < 0) {
+				this.rows = 0;
+			}
+			if (this.columns < 0) {
+				this.columns = 0;
+			}
 			return "#_" + this.rows + "_" + this.columns + "_" + this.code;
 		}
 	}
