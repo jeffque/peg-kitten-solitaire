@@ -11,7 +11,23 @@ PK.App = {
 
         $("#play").click(function(){
             window.location='peg_kitten.html' + window.location.hash;
-        })
+        });
+
+	$("#rows-minus").click(function(){
+		rows_minus();
+	});
+
+	$("#rows-plus").click(function(){
+		rows_plus();
+	});
+
+	$("#columns-minus").click(function(){
+		columns_minus();
+	});
+
+	$("#columns-plus").click(function(){
+		columns_plus();
+	})
     },
 
 
