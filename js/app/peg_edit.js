@@ -22,3 +22,15 @@ function clicked(cell) {
 
 	codify_gameboard();
 }
+
+function rows_minus() {
+}
+
+function rows_plus() {
+}
+
+function columns_minus() {
+}
+
+function columns_plus() {
+}
