@@ -6,6 +6,15 @@ var n_rows = 9;
 var n_columns = 9;
 var state = window.location.hash;
 
+function remove_gameboard() {
+	gameboard = document.getElementById("gameboard");
+
+	while (gameboard.firstChild != null) {
+		gameboard.removeChild(gameboard.firstChild);
+	}
+	cells = null;
+}
+
 function new_gameboard() {
 	var i, j;
 	var row;
@@ -111,8 +120,8 @@ function codify_gameboard() {
 	var code_obj = new PK.peg_code("");
 	var i, j;
 
-	for (i = 0; i < 9; i++) {
-		for (j = 0; j < 9; j++) {
+	for (i = 0; i < n_rows; i++) {
+		for (j = 0; j < n_columns; j++) {
 			switch(cells[i][j].className) {
 				case 'empty':
 				case 'possible':
