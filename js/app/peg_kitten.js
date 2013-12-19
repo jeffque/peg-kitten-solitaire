@@ -14,7 +14,7 @@ function select_cell(cell) {
 	// Try to set the cell as valid if there is an occupied cell between
 	cS = c;
 	for (rS = r - 2; rS <= r + 2; rS += 4) {
-		if ((rS < 0) || (rS >= 9) || (cS < 0) || (cS >= 9)) {
+		if ((rS < 0) || (rS >= n_rows) || (cS < 0) || (cS >= n_columns)) {
 			continue;
 		}
 		if ((cells[rS][cS].className == 'empty') && (cells[(r + rS)/2][(c + cS)/2].className == 'occupied')) {
@@ -24,7 +24,7 @@ function select_cell(cell) {
 	}
 	rS = r;
 	for (cS = c - 2; cS <= c + 2; cS += 4) {
-		if ((rS < 0) || (rS >= 9) || (cS < 0) || (cS >= 9)) {
+		if ((rS < 0) || (rS >= n_rows) || (cS < 0) || (cS >= n_columns)) {
 			continue;
 		}
 		if ((cells[rS][cS].className == 'empty') && (cells[(r + rS)/2][(c + cS)/2].className == 'occupied')) {
@@ -52,7 +52,7 @@ function desselect_cell(cell) {
 
 	cS = c;
 	for (rS = r - 2; rS <= r + 2; rS += 4) {
-		if ((rS < 0) || (rS >= 9) || (cS < 0) || (cS >= 9)) {
+		if ((rS < 0) || (rS >= n_rows) || (cS < 0) || (cS >= n_columns)) {
 			continue;
 		}
 		if (cells[rS][cS].className == 'possible') {
@@ -61,7 +61,7 @@ function desselect_cell(cell) {
 	}
 	rS = r;
 	for (cS = c - 2; cS <= c + 2; cS += 4) {
-		if ((rS < 0) || (rS >= 9) || (cS < 0) || (cS >= 9)) {
+		if ((rS < 0) || (rS >= n_rows) || (cS < 0) || (cS >= n_columns)) {
 			continue;
 		}
 		if (cells[rS][cS].className == 'possible') {
