@@ -50,7 +50,33 @@ function rows_plus() {
 }
 
 function columns_minus() {
+	var code_obj = new PK.peg_code(window.location.hash);
+	var i = '';
+	var new_string_code = '';
+
+	for (i = 0; i < code_obj.rows; i++) {
+		new_string_code += code_obj.code.slice(i * code_obj.columns, (i + 1) * code_obj.columns - 1);
+	}
+
+	code_obj.columns--;
+	code_obj.code = new_string_code;
+
+	remove_gameboard();
+	decodify_gameboard(code_obj.stringfy());
 }
 
 function columns_plus() {
+	var code_obj = new PK.peg_code(window.location.hash);
+	var i = '';
+	var new_string_code = '';
+
+	for (i = 0; i < code_obj.rows; i++) {
+		new_string_code += code_obj.code.slice(i * code_obj.columns, (i + 1) * code_obj.columns) + 'I';
+	}
+
+	code_obj.columns++;
+	code_obj.code = new_string_code;
+
+	remove_gameboard();
+	decodify_gameboard(code_obj.stringfy());
 }
