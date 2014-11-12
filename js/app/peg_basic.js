@@ -1,6 +1,7 @@
 var gameboard;
 var cells = null;
 var bounty_threshold = 1;
+var n_occupied = 44;
 var old_n_rows = 0;
 var old_n_columns = 0;
 var n_rows = 9;
@@ -94,6 +95,8 @@ function decodify_gameboard(code_brute) {
 	n_columns = code_obj.columns;
 	bounty_threshold = code_obj.bounty_threshold;
 
+	n_occupied = 0;
+
 	if (cells == null) {
 		new_gameboard();
 	}
@@ -103,6 +106,7 @@ function decodify_gameboard(code_brute) {
 			switch(code_obj.code[n]) {
 				case 'O':
 					cells[i][j].className = 'occupied';
+					n_occupied++;
 					break;
 				case 'E':
 					cells[i][j].className = 'empty';
