@@ -5,17 +5,19 @@
         <title>Peg Kitten Solitaire</title>
         <link rel="stylesheet" type="text/css" href="css/peg_kitten.css"/>
         <link rel="stylesheet" type="text/css" href="css/bounty.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pretty_html.css"/>
     </head>
 
     <body>
-	<div id="game">
+	<div id="game" class="main-content">
             <div id="div-gameboard" class="float-left">
-                <table id="gameboard">
-                </table>
+                <table id="gameboard"></table>
             </div>
             <div id="bounty" class="float-left">Placeholder bountyarea</div>
         </div>
-        <button id="edit" type=button>Edit this map!</button>
+	<div id="div-control" class="left-nav">
+            <button id="edit" type=button>Edit this map!</button>
+	</div>
     </body>
 
     <script type="text/javascript" src="js/libs/jquery-1.10.2.js"></script>
