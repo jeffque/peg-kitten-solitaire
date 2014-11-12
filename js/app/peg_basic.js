@@ -1,5 +1,6 @@
 var gameboard;
 var cells = null;
+var bounty_threshold = 1;
 var old_n_rows = 0;
 var old_n_columns = 0;
 var n_rows = 9;
@@ -70,7 +71,7 @@ function vanilla_gameboard() {
 
 /**
  * code_brute syntax:
- * #_<n_row>_<n_columns>_<<code>>
+ * #_<n_row>_<n_columns>_<<code>>_<bounty_threshold>_<version>
  *
  * where:
  * 	-- n_row is the number of rows
@@ -86,16 +87,16 @@ function decodify_gameboard(code_brute) {
 	var i, j, n = 0;
 
 	var code_obj = new PK.peg_code(code_brute);
-	console.debug("code obj " + code_obj.code + "; rows " + code_obj.rows + "; columns " + code_obj.columns);
+	console.debug("code obj " + code_obj.code + "; rows " + code_obj.rows + "; columns " + code_obj.columns + "; bounty threshold: " + code_obj.bounty_threshold);
 	console.debug("code obj stringfy: " + code_obj.stringfy());
 
 	n_rows = code_obj.rows;
 	n_columns = code_obj.columns;
+	bounty_threshold = code_obj.bounty_threshold;
 
 	if (cells == null) {
 		new_gameboard();
 	}
-
 
 	for (i = 0; i < n_rows; i++) {
 		for (j = 0; j < n_columns; j++) {
@@ -140,7 +141,7 @@ function codify_gameboard() {
 	code_obj.columns = n_columns;
 
 	console.debug(code_obj.stringfy());
-	estado = window.location.hash = code_obj.stringfy();
+	state = window.location.hash = code_obj.stringfy();
 }
 
 function set_gameboard() {
