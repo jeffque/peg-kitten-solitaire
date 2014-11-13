@@ -14,10 +14,15 @@
 	width: 100%;
 }
 
-.gameboard {
-	min-height: 500px;
+#bounty {
+	height: 500px;
+	width: 400px;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 .float-left {
 	float: left;
+	padding-left: 1em;
+	padding-right: 1em;
 }
