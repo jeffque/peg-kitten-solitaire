@@ -13,3 +13,11 @@
 .left-nav button {
 	width: 100%;
 }
+
+.gameboard {
+	min-height: 500px;
+}
+
+.float-left {
+	float: left;
+}
