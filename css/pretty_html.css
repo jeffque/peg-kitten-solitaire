@@ -1,6 +1,6 @@
 .left-nav {
 	margin-left: 5px;
-	top: 5px;
+	top: 12px;
 	position: fixed;
 	width: 100px;
 }
@@ -24,6 +24,5 @@
 
 .float-left {
 	float: left;
-	padding-left: 1em;
-	padding-right: 1em;
+	margin: 5px;
 }
