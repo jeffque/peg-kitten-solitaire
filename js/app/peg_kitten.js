@@ -105,6 +105,10 @@ function move_piece(origin, destination) {
 	select = null;
 
 	codify_gameboard();
+	n_occupied--;
+	if (n_occupied == bounty_threshold) {
+		give_bounty();
+	}
 }
 
 function clicked(cell) {
@@ -141,4 +145,10 @@ function clicked(cell) {
 			}
 		default:
 	}
+}
+
+function give_bounty() {
+	console.debug("get your bounty");
+	$("#bounty").css("background-image", "url(" + next_kitten.img_url + ")");
+	fetch_next_kitten();
 }

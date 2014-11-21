@@ -4,15 +4,19 @@
         <meta charset="utf-8"/>
         <title>Peg Kitten Solitaire</title>
         <link rel="stylesheet" type="text/css" href="css/peg_kitten.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pretty_html.css"/>
     </head>
 
     <body>
-        <div id="div-gameboard">
-            <table id="gameboard">
-            </table>
+	<div id="game" class="main-content">
+            <div id="div-gameboard" class="float-left">
+                <table id="gameboard"></table>
+            </div>
+            <div id="bounty" class="float-left"></div>
         </div>
-        <div class="bounty"></div>
-        <button id="edit" type=button>Edit this map!</button>
+	<div id="div-control" class="left-nav">
+            <button id="edit" type=button>Edit this map!</button>
+	</div>
     </body>
 
     <script type="text/javascript" src="js/libs/jquery-1.10.2.js"></script>
@@ -20,6 +24,7 @@
     <script type="text/javascript" src="js/app/defines.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
+    <script type="text/javascript" src="js/app/written_kitten.js"></script>
     <script type="text/javascript" src="js/app/peg_basic.js"></script>
     <script type="text/javascript" src="js/app/peg_kitten.js"></script>
 </html>

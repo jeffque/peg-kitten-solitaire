@@ -4,14 +4,17 @@
 		<meta charset="utf-8"/>
 		<title>Peg Kitten Solitaire Editor</title>
 		<link rel="stylesheet" type="text/css" href="css/peg_kitten.css" />
+        <link rel="stylesheet" type="text/css" href="css/pretty_html.css"/>
 	</head>
 
 	<body>
-		<div id="div-gameboard">
-			<table id="gameboard">
-			</table>
+		<div id="game" class="main-content">
+			<div id="div-gameboard" class="float-left">
+				<table id="gameboard">
+				</table>
+			</div>
 		</div>
-		<div id="div-control">
+		<div id="div-control" class="left-nav">
 			<button id="play" type=button>Play this map!</button>
 			<button id="rows-minus" type=button>Less rows?</button>
 			<button id="rows-plus" type=button>More rows?</button>
