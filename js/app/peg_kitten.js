@@ -149,9 +149,6 @@ function clicked(cell) {
 
 function give_bounty() {
 	console.debug("get your bounty");
-	$("#bounty").css("background-image", get_kitten_url());
-}
-
-function get_kitten_url() {
-	return "url('http://farm6.static.flickr.com/5562/14423838371_87509d27c0_z.jpg')";
+	$("#bounty").css("background-image", "url(" + next_kitten.img_url + ")");
+	fetch_next_kitten();
 }
