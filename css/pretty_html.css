@@ -1,0 +1,28 @@
+.left-nav {
+	margin-left: 5px;
+	top: 12px;
+	position: fixed;
+	width: 100px;
+}
+
+
+.main-content {
+	margin-left: 100px;
+	padding-left: 5px;
+}
+
+.left-nav button {
+	width: 100%;
+}
+
+#bounty {
+	height: 500px;
+	width: 400px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.float-left {
+	float: left;
+	margin: 5px;
+}
